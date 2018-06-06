@@ -26,7 +26,8 @@ const instructions = Platform.select({
 export default class PageTwo extends Component {
   static navigationOptions  = {
     title: "Dashboard",
-  };
+    style:{textAlign: 'center'}
+};
   render() {
     return (
       <View style={{flex: 10, alignItems: 'center', justifyContent: 'space-evenly', backgroundColor:'red', flexDirection: 'column'}}>
