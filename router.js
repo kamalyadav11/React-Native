@@ -12,4 +12,4 @@ export default Screensearch = StackNavigator({
     {
         initialRouteName: 'Profile',
     }
-);
+)

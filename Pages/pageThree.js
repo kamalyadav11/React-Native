@@ -1,24 +1,37 @@
 import React from 'react';
-import { View, Button, Dimensions } from 'react-native';
+import { View, Button, Dimensions, TouchableOpacity, Text, TouchableWithoutFeedback } from 'react-native';
+import Square from "../Components/Square";
 
 const {height, width } = Dimensions.get('window')
 
 export default class PageThree extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state ={
+            color: 'red'
+        }
+
+    }
     static navigationOptions = {
         header: null
     }
     render() {
         return(
             <View>
-                <View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-start'}}>
-                    <View style={{height: height * 0.5, width: width * .5, backgroundColor: 'blue', borderWidth: 2, borderColor: 'rgb(201,54,58)'}}/>
-                    <View style={{height: height * 0.5, width: width * .5, backgroundColor: 'blue', borderWidth: 2, borderColor: 'rgb(201,54,58)' }}/>
-                </View>
-                <View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-end'}}>
 
-                    <View style={{height: height * 0.5, width: width * .5, backgroundColor: 'blue', borderWidth: 2, borderColor: 'rgb(201,54,58)'}}/>
-                    <View style={{height: height * 0.5, width: width * .5, backgroundColor: 'blue', borderWidth: 2, borderColor: 'rgb(201,54,58)'}}/>
+                <View style={{flexDirection:'row'}}>
+                    <TouchableWithoutFeedback onPress={() => this.setState({color: 'white'})}>
+                            <Square myColor={'yellow'} myText={"Not Clicked"}/>
+                    </TouchableWithoutFeedback>
+                    <Square myColor={'red'} myText={"Not Clicked"}/>
                 </View>
+
+                <View style={{flexDirection:'row'}}>
+                    <Square myColor={'blue'} myText={'Not Clicked'}/>
+                    <Square myColor={'green'} myText={'Not Clicked'}/>
+                </View>
+
             </View>
         );
     }

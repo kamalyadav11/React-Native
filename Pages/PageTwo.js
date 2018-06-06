@@ -22,7 +22,6 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-//type Props = {};
 export default class PageTwo extends Component {
   static navigationOptions  = {
     title: "Dashboard",
